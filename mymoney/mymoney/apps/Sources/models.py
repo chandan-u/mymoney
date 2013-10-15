@@ -1,5 +1,5 @@
 from django.db import models
-from django.auth.contrib.models import User
+from django.contrib.auth.models import User
 
 from datetime import date
 # Create your models here.
@@ -7,7 +7,7 @@ from datetime import date
 
 class Source(models.Model):
 
-    user =   models.ForeignKey(User, unique=True)
+    user =   models.ForeignKey(User)
     title =  models.CharField(max_length=50)
     details = models.CharField(max_length=150)
     current_balance = models.IntegerField() 
