@@ -1,12 +1,12 @@
 # Django settings for mymoney project.
 import os
 
-
+	
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 # Path of the site root directory
-SITE_CONTEXT_ROOT= os.path.dirname(os.path.realpath('./'))
+PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
 
 ADMINS = (
     # ('U. Chandan', 'chandanchotu@gmail.com'),
@@ -17,7 +17,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': SITE_CONTEXT_ROOT+'/mymoney/mymoney/mymoney.db',                      # Or path to database file if using sqlite3.
+        'NAME': 'mydb.db',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': '',
         'PASSWORD': '',
@@ -29,7 +29,7 @@ DATABASES = {
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = []
-
+        
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
@@ -77,6 +77,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_DIR, './static'),
 )
 
 # List of finder classes that know how to find static files in
@@ -116,6 +117,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_DIR, './templates'),
 )
 
 INSTALLED_APPS = (
@@ -130,6 +132,9 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'south',
+    'mymoney.apps.Credit',
+    'mymoney.apps.Sources',
+    'mymoney.apps.User',
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'

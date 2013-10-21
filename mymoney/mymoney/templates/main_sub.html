@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+{{ src.name }}
+
+{% endblock %}
+{% block scripts %}
+  <style>
+    #source_block { position:absolute; left:450; top:400;}
+    #source_block td {border: 1px solid slategray; padding:5px;}
+  </style>
+{% endblock %}
+
+{% block content %}
+    <div id="source_block">
+     <table>
+        <tr>
+            <th>name</th>
+            <th>description</th>
+            <th>amount</th>
+        </tr>
+        <tr>
+            <td>{{ src.name }}</td>
+            <td>{{ src.description }}</td>
+            <td>{{ src.amount }}</td>
+        </tr>
+     </table>
+    </div> 
+{% endblock %}

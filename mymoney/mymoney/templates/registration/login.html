@@ -1,0 +1,44 @@
+
+{% extends "base.html" %}
+
+{% block title  %}
+
+{% endblock %}
+{% block scripts%}
+
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/login_html.css"/>
+
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div id="login_image">
+     <img src="{{STATIC_URL}}images/login_imag3.jpg" alt="mymoney"/>
+  </div>
+
+  <div id="login_form"> 
+      {% if form.errors %}
+          <p class="error">Sorry, that's not a valid username or password</p>
+      {% endif %}
+      <fieldset>
+          <legend>LogIn</legend>
+      <div id="form">
+      <form action="" method="post" >
+      {% csrf_token %}
+          <label for="username">User name:</label>
+          <input type="text" name="username" value="" id="username">
+          <label for="password">Password:</label>
+          <input type="password" name="password" value="" id="password">
+          <input type="hidden" name="next" value="/user/home"/>
+          <input type="submit" value="login"/>
+      </form>
+      </div>
+     </fieldset>
+  </div>
+
+
+{% endblock %}
+
+

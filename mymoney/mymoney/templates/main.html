@@ -1,0 +1,40 @@
+
+{% extends "base.html" %}
+
+{% block title  %}
+   <title> source_view: main.html</title>
+
+{% endblock %}
+{% block scripts%}
+<style>
+    #source_list_table { position:absolute; left:450; top:400;}
+    #source_list_table td {border: 1px solid slategray; padding:5px;}
+</style>
+
+{% endblock %}
+
+
+
+{% block content %}
+
+    <div id="source_list_table">
+      
+      <table>
+        <tr>
+            <th>name</th>
+            <th>description</th>
+            <th>amount</th>
+        </tr>
+        {% for source in source_list %}
+          <tr>
+            <td> <a href="/sources/{{ source.name }}/">{{ source.name }}</a></td> 
+            <td>{{ source.description }}</td>  
+            <td>{{ source.amount }}</td>  
+          </tr> 
+        {% endfor %}  
+      </table>      
+    </div>
+
+{% endblock %}
+
+
