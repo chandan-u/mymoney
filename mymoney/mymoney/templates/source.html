@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+
+
+{% block scripts %}
+    <style type="text/css">
+
+    </style>
+{% endblock %}
+
+{% block header %}
+
+{% endblock %}
+{% block content %}
+<div id="sourceView">
+    
+        <table>
+        	<tr>
+        		<th>Account</th>
+        		<th>balance</th>
+        		<th>Availability</th>
+
+
+        	</tr>
+            {% if sources_list%}
+            	{% for source in sources_list %}
+                    
+                    <tr>
+                    	<td>source.title</td>
+                    	<td>source.current_balance</td>
+                    	<td>source.type</td>
+                    </tr>
+            	{% endblock %}
+        </table>	
+
+    
+</div>
+<div id="createSource">
+	 <button>+</button>
+</div>
+{% endblock %}
+

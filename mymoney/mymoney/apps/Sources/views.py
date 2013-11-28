@@ -1,10 +1,16 @@
 # Create your views here.
 
-from mymoney.apps.Sources import Source
+from mymoney.apps.Sources.models import Source
 from django.shortcuts import render_to_response, redirect
 from django.contrib.auth.models import User
+from django.template import RequestContext
 
-
+# login redirect decorator. The redirection page is defiend under settings.LOGIN_URL
+# you can override the default login_url by passing redirect_field_name parameter.
+from django.contrib.auth.decorators import login_required   
+ 
+    
+@login_required
 def createSource(request):
     
     if request.method == 'POST':
@@ -24,11 +30,12 @@ def createSource(request):
 
 
 
+@login_required
 def viewSources(request):
    
     sources = Source.objects.filter(user=request.user)
     
-    return render_to_response('', {"sources":"sources"}, context_instance=RequestContext(request))
+    return render_to_response('source.html', {"sources":"sources"}, context_instance=RequestContext(request))
 
 
     

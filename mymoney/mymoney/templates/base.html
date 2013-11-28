@@ -11,14 +11,27 @@
         {% block container %}
             <div id="header">
             {% block header %}
-               <div id="logo"></div>
-               <div id="nav-global"</div>
+               <div id="logo">
+                {% block logo %}
+
+                {% endblock %}
+               </div>
+               <div id="nav-global">
+                {% block nav-global %}
+                    
+                {% endblock %}
+               </div>
             {% endblock %}
             </div>
             <div id="content">
              {% block content %}
               
              {% endblock %}
+            </div>
+            <div id="footer">
+                {% block footer %}
+
+                {% endblock %}
             </div>
         {% endblock %}
         </div>

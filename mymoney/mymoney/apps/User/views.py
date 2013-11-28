@@ -12,7 +12,9 @@ def home(request):
     if request.user.is_authenticated():
 
 
-        username = "chandan"
+
+        user_obj = request.user
+        username = user_obj.username
         
         return render_to_response('user/home.html', {'username':'username'}, context_instance=RequestContext(request))
     else:

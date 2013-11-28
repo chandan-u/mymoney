@@ -1,7 +1,8 @@
 from django.conf.urls import patterns, include, url
 
 from django.contrib.auth.views import login, logout
-from django.contrib.auth import REDIRECT_FIELD_NAME
+
+# from django.contrib.auth import REDIRECT_FIELD_NAME
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -22,5 +23,8 @@ urlpatterns = patterns('',
     url(r'^accounts/login/$', login),
     url(r'^accounts/logout/$', logout),
     url(r'^$', 'mymoney.apps.User.views.home', name='homepage'),
-    url(r'^user/home$', 'mymoney.apps.User.views.home', name='user_home')
+    url(r'^home$', 'mymoney.apps.User.views.home', name='user_home'),
+    url(r'^source$', 'mymoney.apps.Sources.views.viewSources', name='viewSource'),
+    url(r'^credits$','mymoney.apps.Credit.views.viewCredit', name='viewCredit'), 
+    
 )

@@ -167,3 +167,8 @@ LOGGING = {
         },
     }
 }
+
+
+# User defined settings:
+
+LOGIN_URL='/accounts/lgoin'

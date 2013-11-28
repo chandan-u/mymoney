@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+
+{% block %}
+{% block.super header %}
+
+{% endblock %}
+
+
+{% block content %}
+
+{% if credits %}
+  
+    <table> 
+    
+    
+        <tr>
+        	<th>To</th>
+        	<th>amount</th>
+        	<th>status</th>
+      
+        	<th>issued_date</th>
+        	<th>expected return date</th>
+        </tr>    
+    {% for credit in credits %}
+
+        <tr>
+
+        	<td>{{ credit.to }}</td>
+        	<td>{{ credit.amount }}</td>
+        	<td>{{ credit.get_status_display }}</td>
+        	<td>{{ credit.issued_date }}</td>
+        	<td>{{ credit.expected_clearance_date }}</td>
+        </tr>
+    </table>  
+{% else %}
+    <p>No credits given.</p>
+{% endif %}
+
+
+{% endblock %}
