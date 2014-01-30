@@ -24,7 +24,9 @@ urlpatterns = patterns('',
     url(r'^accounts/logout/$', logout),
     url(r'^$', 'mymoney.apps.User.views.home', name='homepage'),
     url(r'^home$', 'mymoney.apps.User.views.home', name='user_home'),
-    url(r'^source$', 'mymoney.apps.Sources.views.viewSources', name='viewSource'),
-    url(r'^credits$','mymoney.apps.Credit.views.viewCredit', name='viewCredit'), 
+    url(r'^sources$', 'mymoney.apps.Sources.views.viewSources', name='viewSource'),
+    url(r'^credits$','mymoney.apps.Credit.views.viewCredit', name='viewCredit'),
+    
     
 )
+

@@ -24,8 +24,8 @@ def createSource(request):
             startDate = request.POST["startDate"]
             type = request.POST["type"]
             lock_date = request.POST["lock_date"]
-            source  = Source.objects.create(title=title, details=detail, current_balance=current_balance, startDate=startDate, type=type, lock_date=lock_date, suser=user_obj)
-        redirect("/Sources/view/")
+            source  = Source.objects.create(title=title, details=detail, current_balance=current_balance, startDate=startDate, type=type, lock_date=lock_date, user=user_obj)
+            redirect("/sources")
         
 
 
@@ -34,8 +34,10 @@ def createSource(request):
 def viewSources(request):
    
     sources = Source.objects.filter(user=request.user)
+
     
-    return render_to_response('source.html', {"sources":"sources"}, context_instance=RequestContext(request))
+    
+    return render_to_response('source.html', {"sources": sources }, context_instance=RequestContext(request))
 
 
     
