@@ -23,8 +23,8 @@
             }
             #container{
                 min-height:100%;
-                min-widht:100%;
-                widhth:inherit;
+                min-width:100%;
+                width:inherit;
                 height:inherit;
               
                 
@@ -69,7 +69,7 @@
                 font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;    
                 /*font-family: Pencil_Title;*/
                 font-size:50px;
-                font-weight:500;    
+                font-weight:100;    
                 background-color: ;
             }
             .nav_elements{
@@ -92,14 +92,14 @@
             display:inline;
             width:245px;
             
-            -webkit-border-radius: 5px;
-            -moz-border-radius: 5px;
-            border-radius: 5px;
-            box-shadow: 0px 1px 4px white;
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+            border-radius: 30px;
+            box-shadow: 0px 1px 4px rgba(107, 94, 94, 0.27);  
             margin-left: auto;
             margin-right: 30px;
             height: 200px;
-            margin-top:10px;
+            margin-top:20px;
             
             
 
@@ -115,40 +115,33 @@
             display: block;
             text-decoration: none;
 
-        } 
-        #centerBox{
-            background-color:#FFA500;
-            margin-left:20px;
-            margin-right:20px; 
-        }
-        #leftBox{
-            background-color: white;  /*#20B2AA; */
-        }
-        #rightBox{
-            background-color:#9ACD32; 
         }
         
         
         .box > a > h3 {
-            color:  #303030 ;/*white;*/
-            margin: 0px auto;
+            /*color:#303030 ;/*white;*/
+            
             text-align: center;
-            font-size:40px;
+            font-size:30px;
             font-weight: 100; 
-            font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
+            font-family: Liberation Sans, arial,sans-serif;
+            /*font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;*/
             /*text-shadow: 2px 2px ;*/
             /*font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;*/
         }
 
+        .box > a:visited { color:rgba(90, 87, 87, 0.67);}
+        .box:hover { background-color:; color:text;}
+
         .box > a > p {
             font-style: normal;
             font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
-            font-size:40px;
+            font-size:35px;
             font-weight:100;
             font-variant: ;
-            color: #303030;
+            color: rgba(90, 87, 87, 0.67);
             /*text-shadow: 1px 1px grey; */
-            margin:5px;
+            /*margin:5px;*/
             text-align: center;
 
         }
@@ -171,22 +164,21 @@
         <ul id="lists">
         {% if sources %}
             {% for source in sources %}
-            <li class="box" id="leftBox">
+            <li class="box" style="background-color:white;">
                 <a href="">
                       
                     <h3>{{ source.title }}</h3>
-                    <hr/>
+                    
                     <p>{{ source.current_balance }}</p>
                     
                 </a>     
             </li>
             {% endfor %}        
         {% else %}
-                No Accounts created.
+                <div class="">
         {% endif %}
         </ul>
-    </div>             
-              
+    </div>                          
 </div>
 <div id="createSource">
 	 <button>+</button>
