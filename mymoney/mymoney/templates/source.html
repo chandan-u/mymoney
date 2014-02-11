@@ -9,7 +9,7 @@
                 height:100%;
                 width:100%;
  
-                 
+                
                 
             }
 
@@ -110,10 +110,12 @@
              transition: width 2s;
             -webkit-transition: width 2s;
             -moz-webkit-transition: width 2s;
+            background-color:white;
         }
         .box > a {
             display: block;
             text-decoration: none;
+            
 
         }
         
@@ -131,8 +133,8 @@
         }
 
         .box > a:visited { color:rgba(90, 87, 87, 0.67);}
-        .box:hover { background-color:; color:text;}
-
+        .box > a:hover { background-color:orange; color:white;   }
+          
         .box > a > p {
             font-style: normal;
             font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
@@ -145,7 +147,20 @@
             text-align: center;
 
         }
-    </style>
+        #button {
+            float: left;
+            display:inline-block;
+            width:245px;                         
+            margin-left: auto;
+            margin-right: 30px;
+            height: 200px;
+            margin-top:20px;
+            background-color:;
+            text-align: center;
+            font-size:100px;
+            padding:15px;
+        }   
+        </style>
 {% endblock %}
 
 {% block header %}
@@ -164,7 +179,7 @@
         <ul id="lists">
         {% if sources %}
             {% for source in sources %}
-            <li class="box" style="background-color:white;">
+            <li class="box">
                 <a href="">
                       
                     <h3>{{ source.title }}</h3>
@@ -173,15 +188,14 @@
                     
                 </a>     
             </li>
-            {% endfor %}        
-        {% else %}
-                <div class="">
+            {% endfor %}       
         {% endif %}
+        <div id="button">+</div>
         </ul>
     </div>                          
 </div>
-<div id="createSource">
-	 <button>+</button>
-</div>
+
+	 
+
 {% endblock %}
 
