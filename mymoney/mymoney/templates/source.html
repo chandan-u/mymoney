@@ -145,22 +145,21 @@
             /*text-shadow: 1px 1px grey; */
             /*margin:5px;*/
             text-align: center;
-
         }
-        #button {
-            float: left;
+        #button {        
             display:inline-block;
-            width:245px;                         
+            width:200px;                         
             margin-left: auto;
             margin-right: 30px;
             height: 200px;
             margin-top:20px;
             background-color:;
-            text-align: center;
-            font-size:100px;
             padding:15px;
-        }   
-        </style>
+            text-align:center;
+            cursor: pointer;
+        }
+        #button span{ font-size:100px; }
+    </style>
 {% endblock %}
 
 {% block header %}
@@ -190,7 +189,7 @@
             </li>
             {% endfor %}       
         {% endif %}
-        <div id="button">+</div>
+        <a id="button" href="/sources"><span>+</span></a>
         </ul>
     </div>                          
 </div>
